@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// 1) Necesitamos la variable React en Scope
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import React from 'react'
+//Esta libreria me permite es hacer toda la estructura, es decir, hacer los componentes, etc.
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// 2) Necesitamos la variable ReactDOM en Scope
+
+import ReactDOM from 'react-dom'
+// Esta libreria es la que nos permite poder visualizar en el navegador por ejemplo todo el codigo que elaboramos en la libreria React. Agarra el codigo y lo inyecta en el DOM.
+
+// 3) Necesitamos un componenete en scope 
+
+/* function App (){
+    return "Hola mundo!"
+} */
+
+/* const App = () => "Hola Mundo Flecha" */
+
+import App from './components/App.js'
+import './estilos.css'
+
+// 4) Necesitamos poner el componente en el DOM 
+
+ReactDOM.render(<App/>,document.getElementById("root"))
