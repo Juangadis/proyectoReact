@@ -1,11 +1,11 @@
 const NavBar = () => {
   return (
     <header>
-        <h1>Mi E-Commerce</h1>
+        <h1>Mi Tienda</h1> {/* Titulo temporal hasta saber que nombre ponerle */}
         <nav>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
+            <a href="#">link 1</a>
+            <a href="#">link 2</a>
+            <a href="#">link 3</a>
         </nav>
     </header>
   )
