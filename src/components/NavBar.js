@@ -1,12 +1,12 @@
+import CartWidget from "./CartWidget"
+import Nav from "./Nav"
+
 const NavBar = () => {
   return (
-    <header>
-        <h1>Mi E-Commerce</h1>
-        <nav>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-        </nav>
+    <header className="header">
+        <h1>Mi Tienda</h1>
+        <CartWidget/>
+        <Nav />
     </header>
   )
 }
