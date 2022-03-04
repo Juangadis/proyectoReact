@@ -8,6 +8,38 @@ html, body, #root {
     height: 100vh;
 }
 
-body {
-    background-color: yellow;
+#root {
+    display: flex;
+    flex-direction: column;
 }
+
+.header {
+    background: rgb(51, 38, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+}
+
+h1, a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav a {
+    margin-left: 1rem;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+footer {
+    padding: 0.5rem;
+    background: rgb(51, 38, 1);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
