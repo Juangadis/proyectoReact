@@ -43,3 +43,22 @@ footer {
     font-size: 0.8rem;
 }
 
+.cardsProductos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.cardProducto {
+    text-align: center;
+    border: 3px solid white;
+    width: 50%;
+    background: rgb(51, 38, 1);
+    border-radius: 1rem 3rem;
+}
+
+.cardTitle {
+    color: white;
+}
+
