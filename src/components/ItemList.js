@@ -3,11 +3,11 @@ import Item from "./Item"
 const ItemList = ({productos}) => {
   return (
     <>
-        <ul>
+        <section className="cardsProductos">
             {productos.map((producto) => {
               return <Item key={producto.id} producto={producto}/>
             })}
-        </ul>
+        </section>
     </>
   )
 }
