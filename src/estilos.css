@@ -62,3 +62,29 @@ footer {
     color: white;
 }
 
+.cardProductos {
+    background: rgb(51, 38, 1);
+    width: 100%;
+    display: inline-block;
+}
+
+.cardTitulo {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin:2rem
+}
+
+.card-caja {
+    display: flex;
+}
+
+.card-caja img {
+    width: 50%;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.card-caja p {
+    font-size: 1.5rem;
+    margin: 0 1rem 1rem 1rem;
+}
