@@ -3,15 +3,15 @@ import NavBar from './NavBar'
 import ItemListContainer from './ItemListContainer'
 import Footer from './Footer'
 import ItemDetailContainer from './ItemDetailContainer'
+import { BrowserRouter } from 'react-router-dom'
 
 const App = () => {
   return (
-    <>
-        <NavBar/>
-        <ItemListContainer nombre="Juan" edad="23"/>
-        <ItemDetailContainer/>
-        <Footer/>
-    </>
+    <BrowserRouter>
+      <NavBar/>
+      <ItemListContainer nombre="Juan" edad="23"/>
+      <Footer/>
+    </BrowserRouter>
   )
 }
 

@@ -1,26 +1,10 @@
-import ItemCount from "./ItemCount"
+/* import ItemCount from "./ItemCount" */
 import {useEffect, useState} from "react"
 import ItemList from "./ItemList"
 import products from "../database/products"
-
-console.log(products)
-/* let productosIniciales = [
-  {
-    id: 1,
-    nombre: "Producto 1",
-    precio: 100
-  },
-  {
-    id: 2,
-    nombre: "Producto 2",
-    precio: 200
-  },
-  {
-    id: 3,
-    nombre: "Producto 3",
-    precio: 300
-  }
-] */
+import { Route, Routes } from "react-router-dom"
+import Carrito from "./Carrito"
+import ItemDetailContainer from "./ItemDetailContainer"
 
 const ItemListContainer = (greeting) => {
 
@@ -48,8 +32,12 @@ const ItemListContainer = (greeting) => {
     return (
       <main>
           <h2>Bienvenidos {greeting.nombre}!!</h2>
-          <p>Tenes {greeting.edad} años</p>
-          <ItemList productos={productos}/>
+          <Routes>
+            <Route path="/" element={<ItemList productos={productos}/>}/>
+            <Route path="/carrito" element={<Carrito/>}/>
+            <Route path="/categoria/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/producto/:id" element={<ItemDetailContainer/>}/>
+          </Routes>
           {/* <ItemCount stock={10} inicial={1}/> */}
       </main>
     )
