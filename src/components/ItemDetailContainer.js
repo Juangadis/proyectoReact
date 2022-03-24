@@ -1,44 +1,40 @@
-import React from 'react'
-import ItemDetail from './ItemDetail'
-import {useEffect, useState} from "react"
+import { useState, useEffect} from "react"
+import { useParams } from "react-router-dom"
+import { toast } from "react-toastify"
+import ItemDetail from "./ItemDetail"
 
-let producto ={
-    id: 1,
-    nombre: "Producto 1",
-    precio: 100,
-    imgURL: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/rick-y-morty-1563393839.jpg?crop=1.00xw:0.891xh;0,0.0545xh&resize=480:*",
-    descripcion: "La serie sigue las desventuras de un científico, Rick, y su fácilmente influenciable nieto, Morty, quienes pasan el tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos."
-  }
+const ItemDetailContainer = () => {
 
-const ItemDetailContainer = (greeting) => {
+  const [producto, setProducto] = useState({})
+  const [loading, setLoading] = useState(true)
 
-    const [productos, setProductos] = useState({})
+  const {idProducto} = useParams()
 
-    useEffect(() => {
+  useEffect(()=>{
 
-      const pedido = new Promise ((res, rej)=>{
-        setTimeout(()=> {
-          res(producto)
-        },5000)
-      })
+    fetch(`https://fakestoreapi.com/products/${idProducto}`)
+    .then((response)=>{
+      return response.json()
+    })
+    .then((resultado)=>{
+      setProducto(resultado) 
+    })
+    .catch(()=>{
+      toast.error("Error al cargar el producto")
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
 
-      pedido
-      .then((resultado)=>{
-        console.log("Estuvo Bien")
-        setProductos(producto)
-      })
-      .catch((error)=>{
-        console.log("Estuvo mal")
-      })
+  })
 
-    },[])
-
+  if(loading){
+    return <h1>Cargando...</h1>
+  }else{
     return (
-      <main>
-          <ItemDetail productos={productos}/>
-          {/* <ItemCount stock={10} inicial={1}/> */}
-      </main>
-    )
+      <ItemDetail producto={producto}/>
+  )
   }
+}
 
 export default ItemDetailContainer
