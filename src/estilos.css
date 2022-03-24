@@ -53,9 +53,9 @@ footer {
 .cardProducto {
     text-align: center;
     border: 3px solid white;
-    width: 50%;
+    width: 20%;
     background: rgb(51, 38, 1);
-    border-radius: 1rem 3rem;
+    border-radius: 3px;
 }
 
 .cardTitle {
@@ -66,6 +66,25 @@ footer {
     background: rgb(51, 38, 1);
     width: 100%;
     display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.cardProducto h1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+
+.cardProducto img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin: 10px 0;
+}
+
+.cardProducto:hover {
+    transform: scale(1.1);
 }
 
 .cardTitulo {
