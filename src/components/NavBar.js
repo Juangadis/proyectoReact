@@ -1,8 +1,13 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { contexto } from "./CartContext"
 import CartWidget from "./CartWidget"
 import Nav from "./Nav"
 
 const NavBar = () => {
+
+  const {calcCantidad} = useContext(contexto)
+
   return (
     <header className="header">
         <Link to="/">
@@ -10,6 +15,7 @@ const NavBar = () => {
         </Link>
         <Link to="/carrito">
           <CartWidget/>
+          {calcCantidad()}
         </Link>
         <Nav />
     </header>

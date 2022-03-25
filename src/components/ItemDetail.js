@@ -1,13 +1,21 @@
-/* import ItemCount from './ItemCount' */
+import ItemCount from './ItemCount'
 import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
+import React, { useState, useContext } from 'react';
+import { Link } from "react-router-dom"
+
+import { contexto } from "./CartContext"
 
 const ItemDetail = ({producto}) => {
+    const {addItem} = useContext(contexto)
 
-    /* const onAdd = (cantidadSeleccionada) => {
-      console.log("Añadir al carrito",
-      cantidadSeleccionada)
-    } */
+    const [seleccionado, setSeleccionado] = useState(false)
+
+    const onAdd = (cantidadSeleccionada) => {
+      console.log("Añadir al carrito",cantidadSeleccionada)
+      setSeleccionado(cantidadSeleccionada)
+      addItem(producto,cantidadSeleccionada)
+    }
 
     return (
         <article className="cardProductos">
@@ -19,9 +27,10 @@ const ItemDetail = ({producto}) => {
               <p>Precio: ${producto.price}</p>
               <div>
                 <Rate count={5} value={producto.rating?.rate}/>
-                <span>Rates : {item.rating?.count}</span>
+                <span>Rates : {producto.rating?.count}</span>
               </div>
-              {/* <ItemCount onAdd={onAdd} stock={10} initial={1}/> */}
+              <ItemCount onAdd={onAdd} stock={10} initial={1}/>
+              <Link to="/carrito">carrito</Link>
             </div>
           </div>
         </article>

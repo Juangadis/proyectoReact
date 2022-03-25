@@ -6,12 +6,16 @@ import ItemDetailContainer from './ItemDetailContainer'
 import { BrowserRouter } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import  'react-toastify/dist/ReactToastify.css' ;
+import MiProvider from './CartContext'
+
 
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBar/>
-      <ItemListContainer nombre="Juan" edad="23"/>
+      <MiProvider>
+        <NavBar/>
+        <ItemListContainer nombre="Juan" edad="23"/>
+      </MiProvider>
       <Footer/>
       <ToastContainer/>
     </BrowserRouter>
