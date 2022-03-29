@@ -99,7 +99,8 @@ footer {
 }
 
 .card-caja img {
-    width: 50%;
+    width: 100%;
+    height: 20rem;
     margin: 0 1rem 1rem 1rem;
 }
 
