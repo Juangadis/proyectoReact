@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { contexto } from "./CartContext"
+import { contexto } from "../contexto/CartContext"
 import CartWidget from "./CartWidget"
 import Nav from "./Nav"
 

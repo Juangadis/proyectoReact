@@ -4,7 +4,7 @@ import 'rc-rate/assets/index.css';
 import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom"
 
-import { contexto } from "./CartContext"
+import { contexto } from "../contexto/CartContext"
 
 const ItemDetail = ({producto}) => {
     const {addItem} = useContext(contexto)
@@ -12,7 +12,6 @@ const ItemDetail = ({producto}) => {
     const [seleccionado, setSeleccionado] = useState(false)
 
     const onAdd = (cantidadSeleccionada) => {
-      console.log("Añadir al carrito",cantidadSeleccionada)
       setSeleccionado(cantidadSeleccionada)
       addItem(producto,cantidadSeleccionada)
     }
