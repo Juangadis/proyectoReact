@@ -6,11 +6,6 @@ const Carrito = () => {
 
   const {carrito, total, borrarProdDelCarrito, limpiarCarrito} = useContext(contexto)
 
-  const quitarProducto = (id) => {
-    console.log(id)
-    borrarProdDelCarrito(id)
-  }
-
   const borrarCarrito = () => {
     limpiarCarrito()
   }
@@ -23,7 +18,7 @@ const Carrito = () => {
           <p>{producto.title}</p>
           <p>{producto.cantidad} x {producto.price}</p>
           <p>Total parcial: ${producto.cantidad * producto.price} </p>
-          <button onClick={quitarProducto}>Quitar Producto</button>
+          <button onClick={() => borrarProdDelCarrito(producto.id)}>Quitar Producto</button>
         </div>
       ))  : <div>
             <p>No hay productos en el carrito</p>
