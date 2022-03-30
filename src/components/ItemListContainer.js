@@ -32,21 +32,18 @@ const ItemListContainer = (greeting) => {
 
     },[idCategoria])
 
-    if(loading){
-      return <h2>Cargando ...</h2>
-    }else{
-      return (
-        <main>
+    return (
+      <main>
+        { loading ? <h2>Cargando ...</h2> : <main>
             <Routes>
               <Route path="/" element={<ItemList productos={productos}/>}/>
               <Route path="/carrito" element={<Carrito/>}/>
               <Route path="/categoria/:idCategoria" element={<ItemDetailContainer/>}/>
               <Route path="/producto/:idProducto" element={<ItemDetailContainer/>}/>
             </Routes>
-            {/* <ItemCount stock={10} inicial={1}/> */}
-        </main>
-      )
-    }
+        </main> }
+      </main>
+    )
   }
 
 export default ItemListContainer 

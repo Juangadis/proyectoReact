@@ -15,7 +15,7 @@ const NavBar = () => {
         </Link>
         <Link to="/carrito">
           <CartWidget/>
-          {calcCantidad()}
+          { calcCantidad() > 0 ? calcCantidad() : " "}
         </Link>
         <Nav />
     </header>
