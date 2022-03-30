@@ -25,10 +25,11 @@ const MiProvider = ({children}) => {
             return item.id === id
         })
     }
+    
     const borrarProdDelCarrito = (id) => {
-            const resultado = carrito.filter(producto => producto.id !== id)
-            setCarrito(resultado)
+        setCarrito(carrito.filter(producto => producto.id !== id))
     }
+
     const limpiarCarrito = () => {
         setCarrito([])
     }
