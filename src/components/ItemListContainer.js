@@ -5,6 +5,8 @@ import { Route, Routes, useParams } from "react-router-dom"
 import Carrito from "./Carrito"
 import ItemDetailContainer from "./ItemDetailContainer"
 import { toast } from "react-toastify"
+import { db } from "../firebase/firebase"
+import { collection, getDocs, query, where } from "firebase/firestore"
  
 
 const ItemListContainer = (greeting) => {
@@ -16,19 +18,26 @@ const ItemListContainer = (greeting) => {
 
     useEffect(() => {
 
-      fetch(`https://fakestoreapi.com/products`)
-      .then((response)=>{
-        return response.json()
-      })
-      .then((resultado) =>{
-        setProductos(resultado)
-      })
-      .catch((error)=>{
-        toast.error("Error al traer los productos")
-      })
-      .finally(() =>{
-        setLoading(false)
-      })
+      if(!idCategoria){
+
+        const productosCollection = collection(db, "productos")
+        const pedido = getDocs (productosCollection)
+
+        pedido
+        .then(resultado => setProductos(resultado.docs.map(doc => doc.data())))
+        .catch(error=>toast.error("Error al traer los productos"))
+        .finally(() =>setLoading(false))
+      }else{
+
+        const productosCollection = collection(db, "productos")
+        const filtro = query(productosCollection, where("category", "==", idCategoria))
+        const pedido = getDocs (filtro)
+
+        pedido
+        .then(resultado => setProductos(resultado.docs.map(doc => doc.data())))
+        .catch(error=>toast.error("Error al traer los productos"))
+        .finally(() =>setLoading(false))
+      }
 
     },[idCategoria])
 
@@ -38,7 +47,7 @@ const ItemListContainer = (greeting) => {
             <Routes>
               <Route path="/" element={<ItemList productos={productos}/>}/>
               <Route path="/carrito" element={<Carrito/>}/>
-              <Route path="/categoria/:idCategoria" element={<ItemDetailContainer/>}/>
+              <Route path="/categoria/:idCategoria/*" element={<ItemListContainer/>}/>
               <Route path="/producto/:idProducto" element={<ItemDetailContainer/>}/>
             </Routes>
         </main> }

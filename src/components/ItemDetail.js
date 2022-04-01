@@ -3,17 +3,16 @@ import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
 import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom"
-
 import { contexto } from "../contexto/CartContext"
 
 const ItemDetail = ({producto}) => {
-    const {addItem} = useContext(contexto)
 
+    const {addItem} = useContext(contexto)
     const [seleccionado, setSeleccionado] = useState(false)
 
     const onAdd = (cantidadSeleccionada) => {
       setSeleccionado(cantidadSeleccionada)
-      addItem(producto,cantidadSeleccionada)
+      addItem(producto, cantidadSeleccionada)
     }
 
     return (
