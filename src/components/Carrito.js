@@ -2,12 +2,12 @@ import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { contexto } from "../contexto/CartContext"
 import { db } from "../firebase/firebase"
-import { collection, serverTimestamp, addDoc, updateDoc, query, where, getDocs , doc } from "firebase/firestore"
+import { collection, serverTimestamp, addDoc } from "firebase/firestore"
 import { toast } from "react-toastify"
 
 const Carrito = () => {
 
-  const {carrito, total, borrarProdDelCarrito, limpiarCarrito} = useContext(contexto)
+  const {carrito, calcTotal, borrarProdDelCarrito, limpiarCarrito} = useContext(contexto)
 
   const borrarCarrito = () => {
     limpiarCarrito()
@@ -16,27 +16,23 @@ const Carrito = () => {
   const terminarCompra = () => {
 
     const orden = {
-      buyer: {
+      buyer : {
         nombre: "Juan",
         telefono: "113434343434",
         email: "fulanito@gmail.com"
       },
       items: carrito,
       date: serverTimestamp(),
-      total: total
+      total: calcTotal()
     }
 
     const ordenesCollection = collection(db, "ordenes")
-    const productosCollection = collection(db, "productos")
-    const pedido = addDoc(ordenesCollection, orden)
+
+    const pedido = addDoc(ordenesCollection , orden )
 
     pedido
-      .then(resultado => {
-        toast.success("Finalizo la compra!")
-      })
-      .catch(error => {
-        toast.error("hubo un error!")
-      })
+      .then(resultado => {toast.success("Finalizo la compra!")})
+      .catch(error => {toast.error("Hubo un error!")})
   }
 
   return (
@@ -53,7 +49,6 @@ const Carrito = () => {
               <div key={producto.id}>
                 <p>{producto.title}</p>
                 <p>{producto.cantidad} x {producto.price}</p>
-                <p>Total parcial: ${producto.cantidad * producto.price} </p>
                 <button onClick={() => borrarProdDelCarrito(producto.id)}>Quitar Producto</button>
               </div>
             ))}
@@ -61,6 +56,7 @@ const Carrito = () => {
           </div>
         </>
       )}
+      <p>Total : ${calcTotal()}</p>
       <button onClick={terminarCompra}>Terminar la compra</button>
     </>
   )
