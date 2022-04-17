@@ -11,13 +11,13 @@ const NavBar = () => {
   return (
     <header className="header">
         <Link to="/">
-          <h1>Mi Tienda</h1>
+          <h1>TODO TIENDA</h1>
         </Link>
+        <Nav/>
         <Link to="/carrito">
           <CartWidget/>
           { calcCantidad() > 0 ? calcCantidad() : " "}
         </Link>
-        <Nav />
     </header>
   )
 }

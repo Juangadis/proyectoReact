@@ -43,14 +43,14 @@ const ItemListContainer = (greeting) => {
 
     return (
       <main>
-        { loading ? <h2>Cargando ...</h2> : <main>
+        { loading ? <h2>Cargando ...</h2> : <>
             <Routes>
               <Route path="/" element={<ItemList productos={productos}/>}/>
               <Route path="/carrito" element={<Carrito/>}/>
               <Route path="/categoria/:idCategoria/*" element={<ItemListContainer/>}/>
               <Route path="/producto/:idProducto" element={<ItemDetailContainer/>}/>
             </Routes>
-        </main> }
+        </> }
       </main>
     )
   }

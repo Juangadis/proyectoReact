@@ -1,7 +1,7 @@
 const CartWidget = () => {
-  return (
-    <span className="material-icons">&#xE87C;</span>
-  )
+  return <>
+    <span class="material-icons">shopping_cart</span>
+  </>
 }
 
 export default CartWidget

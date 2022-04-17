@@ -17,18 +17,18 @@ const ItemDetail = ({producto}) => {
 
     return (
         <article className="cardProductos">
-          <h2 className="cardTitulo">{producto.title}</h2>
           <div className="card-caja">
             <img src={producto.image}></img>
             <div className="card-caja-derecha">
-            <p>{producto.description}</p>
-              <p>Precio: ${producto.price}</p>
+              <h2 className="cardTitulo">{producto.title}</h2>
               <div>
                 <Rate count={5} value={producto.rating?.rate}/>
                 <span>Rates : {producto.rating?.count}</span>
               </div>
-              <ItemCount onAdd={onAdd} stock={10} initial={1}/>
-              <Link to="/carrito">carrito</Link>
+              <p>{producto.description}</p>
+              <p>${producto.price}</p>
+              <ItemCount onAdd={onAdd} stock={producto.stock} initial={1}/>
+              <Link className="btnComprarAhora" to="/carrito">Comprar ahora</Link>
             </div>
           </div>
         </article>

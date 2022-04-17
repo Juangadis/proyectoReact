@@ -4,11 +4,11 @@ const ItemList = ({productos}) => {
   
   return (
     <>
-        <section className="cardsProductos">
-            {productos.map((producto) => {
-              return <Item key={producto.id} producto={producto}/>
-            })}
-        </section>
+      <section className="cardsProductos">
+          {productos.map((producto) => {
+            return <Item key={producto.id} producto={producto}/>
+          })}
+      </section>
     </>
   )
 }
