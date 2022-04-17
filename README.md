@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+<div align="center"><img src="https://res.cloudinary.com/hdsqazxtw/image/upload/v1579032128/coder-logo-white_t41xzb.png"/> 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center"> Proyecto E-Commerce Coderhouse </h1>
 
-## Available Scripts
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7a1c7619-09fa-4ec8-92f8-ffa20cd19f39/deploy-status)](https://app.netlify.com/sites/bucolic-sunshine-01b455/deploys)
 
-In the project directory, you can run:
+<h4>
+    <a href="https://eloquent-alfajores-d0fbc4.netlify.app/">Ver Demo</a>
+</h4>
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# :notebook_with_decorative_cover: Tabla de Contenido
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - [:camera: Screenshots](#camera-screenshots)
 
-### `npm test`
+  - [:space_invader: Tecnologías usadas](#space_invader-tecnologías-usadas)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - [Comenzando con el proyecto.](#comenzando-con-el-proyecto)
+    - [Prerequisitos](#prerequisitos)
+    - [:running: Correr el proyecto localmente](#running-correr-el-proyecto-localmente)
 
-### `npm run build`
+### :camera: Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div align="center"> 
+  <img src="./src/videoDemo/demo.gif" alt="Demo gif" />
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :space_invader: Tecnologías usadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* [React.js](https://reactjs.org/)
+  * React es una biblioteca Javascript y fue la tecnologia aprendida en este curso.
+* [React Router](https://reactrouter.com/)
+  * Utilice esta librearía para poder obtener un enrutamiento dinámico.
+* [Create React App](https://create-react-app.dev/)
+  * Este proyecto se construyó usando Create React App.
+* [Firebase](https://firebase.google.com/)
+  * Firebase es una plataforma para el desarrollo de aplicaciones web y aplicaciones móviles. La misma ofrece un servicio de hosting completamente administrado para microservicios y contenido estático y dinámico. Cuenta con el respaldo del almacenamiento SSD y una CDN (red de entrega de contenido) global. Firebase Hosting incluye SSL sin necesidad de configuración para que el contenido se publique siempre de forma segura. 
+* [Netlify](https://www.netlify.com/)
+  * Netlify es una herramienta de hosting que me permitió hacer un deploy del proyecto
+* [react-toastify](https://www.npmjs.com/package/react-toastify)
+  * React-Toastify me permitio agregar notificaciones al proyecto con facilidad.
 
-### `npm run eject`
+## Comenzando con el proyecto.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clonar el proyecto:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/Juangadis/proyectoReact
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ir al directorio del proyecto:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  cd app
+```
 
-## Learn More
+Instalar las dependencias:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Correr el servidor:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  npm start
+```
