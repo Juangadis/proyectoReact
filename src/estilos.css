@@ -249,6 +249,10 @@ footer {
 
 @media (min-width: 320px) and (max-width: 420px) {
 
+    .header {
+        padding: 0.1rem 0.4rem;
+    }
+
     .cardsProductos{
         flex-direction: column;
         flex-wrap: nowrap;
@@ -263,7 +267,8 @@ footer {
     }
 
     .card-caja img {
-        width: 100%;
+        height: auto;
+        margin: 0;
     }
 
     .card-caja-derecha{
@@ -279,7 +284,7 @@ footer {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        margin: 6rem 0;
+        margin: 4rem 0;
     }
 
     .formulario {
